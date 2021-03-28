@@ -51,7 +51,7 @@ class GenShinInfoAPI:
     @classmethod
     def DSGet(cls):
         n = cls.md5(cls.mhyVersion)
-        i = str(int(time() - 30000))
+        i = str(int(time()))
         r = ''.join(random.sample(string.ascii_lowercase + string.digits, 6))
         c = cls.md5(f"salt={n}&t={i}&r={r}")
         return f"{i},{r},{c}"
